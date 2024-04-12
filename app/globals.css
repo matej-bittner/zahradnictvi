@@ -2,32 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+  -webkit-text-fill-color: black;
+  box-shadow: inset 0 0 20px 20px #fff;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+h1{
+  @apply font-medium text-[20px] sm:text-[24px] lg:text-[28px] text-black font-poppins
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.main-text{
+  @apply font-normal text-[16px] sm:text-[18px] lg:text-[20px] xl:text-[22px] text-black font-ptSans
 }
+
+
+.container{
+  @apply px-6 md:px-8 lg:px-12 max-w-[1440px] mx-auto pb-3 md:py-3
+}
+
+.section-box{
+  @apply py-0
+}
+
+
+
+/*kurzy*/
+
+.plan-h2{
+  @apply text-black sm:text-white
+}
+.plan-text{
+  @apply font-normal text-[18px] lg:text-[20px] text-black
+}
+
+/*contact*/
+.contact-form{
+  @apply w-[70%] min-w-[300px]
+}
+
+.contact-form  input, textarea{
+  @apply w-full max-md:bg-background-white max-md:border-2 max-md:border-light-green max-md:rounded-md px-3 outline-none
+  text-[14px] md:text-[16px] lg:text-[18px] placeholder:italic placeholder-black
+  md:border-x-0 md:border-t-0 md:border-b-[1px]
+  focus:ring-0 focus:border-black
+}
+
+
+
+.contact-form input{
+  @apply h-[35px]
+}
+.contact-form textarea{
+  @apply h-[120px] md:resize-none
+}
+
+/*pricing box*/
+
+.pricing-content {
+  @apply  font-ptSans text-[22px]
+}
+
+.pricing-content li{
+  @apply bg-[url('/icons/kvetinac.svg')] bg-[length:25px_25px] bg-no-repeat bg-left px-8 min-h-[26px] text-[16px] xl:text-[20px]
+}
+
+.all-box{
+  @apply border-black border-2 max-md:border-b-0 px-4 pt-4 pb-2 w-[90%] min-w-[300px] max-sm:max-w-[450px] sm:min-h-[300px] md:min-h-[400px] xl:min-h-[460px] bg-white transition-all duration-300
+}
+
+#box-1, #box-3{
+  @apply hidden md:flex md:flex-col  lg:w-[375px] max-xl:rounded-t-[20px] xl:rounded-tl-[20px] xl:rounded-br-[20px]
+}
+
+#box-1{ @apply max-xl:order-2 } #box-3{ @apply max-xl:order-3 }
+
+#box-2{
+  @apply max-xl:order-1 flex flex-col sm:w-[450px] md:col-span-2 xl:w-[375px]   max-xl:rounded-t-[20px] xl:rounded-[20px]
+}
+
+
+
+/*cart radio input*/
+.options input{
+  @apply mr-6 ring-1 ring-black checked:bg-light-green checked:hover:bg-light-green focus:bg-light-green focus:outline-none focus:ring-1 focus:ring-black checked:focus:bg-light-green  checked:active:bg-light-green
+}
+
+/*cart form*/
+
+.cart-form input{
+  @apply  bg-background-white border-2 border-light-green rounded-md px-3 outline-none text-[18px]  placeholder:italic placeholder-black
+   h-[46px] max-w-[300px] mx-auto
+  focus:ring-0 focus:border-light-green
+}
+
+
+
